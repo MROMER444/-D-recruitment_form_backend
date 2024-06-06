@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum City {
+  Baghdad
+  Basra
+  Nineveh
+  AlAnbar
+  Sulaymaniyah
+  Erbil
+  Diyala
+  Karbala
+  Kirkuk
+  Babil
+  Najaf
+  DhiQar
+  Maysan
+  Muthanna
+  Qadisiyyah
+  Wasit
+  Salah_al_Din
+  Dohuk
+}
+
+enum Degree {
+  Bachelor
+  Master
+  PhD
+  Associate
+  Diploma
+  ertificate
+}
+
+model Information {
+  id                 Int    @id @default(autoincrement())
+  name               String
+  email              String
+  phone              String
+  Short_Introduction String
+  age                Int
+  city               City
+  field_of_study     String
+  degree             Degree
+  year_of_experience Float
+  photo              String?
+  resume             String ?
+}
+
+
+
+
+
+
+
+
